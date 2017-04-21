@@ -1,0 +1,686 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/isaacs/promzard">promzard (v0.3.0)</a>
+</h1>
+<h4>prompting wizardly</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.promzard">module promzard</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.promzard">
+            function <span class="apidocSignatureSpan"></span>promzard
+            <span class="apidocSignatureSpan">(file, ctx, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard">
+            function <span class="apidocSignatureSpan">promzard.</span>PromZard
+            <span class="apidocSignatureSpan">(file, ctx)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.fromBuffer">
+            function <span class="apidocSignatureSpan">promzard.</span>fromBuffer
+            <span class="apidocSignatureSpan">(buf, ctx, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">promzard.</span>PromZard.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.promzard.PromZard">module promzard.PromZard</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard.PromZard">
+            function <span class="apidocSignatureSpan">promzard.</span>PromZard
+            <span class="apidocSignatureSpan">(file, ctx)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.promzard.PromZard.prototype">module promzard.PromZard.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard.prototype.load">
+            function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>load
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard.prototype.loaded">
+            function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>loaded
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard.prototype.makeModule">
+            function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>makeModule
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard.prototype.makePrompt">
+            function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>makePrompt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard.prototype.prompt">
+            function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>prompt
+            <span class="apidocSignatureSpan">(pdt, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard.prototype.walk">
+            function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>walk
+            <span class="apidocSignatureSpan">(o, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.promzard.PromZard.prototype.wrap">
+            function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>wrap
+            <span class="apidocSignatureSpan">(body)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.promzard" id="apidoc.module.promzard">module promzard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.promzard" id="apidoc.element.promzard.promzard">
+        function <span class="apidocSignatureSpan"></span>promzard
+        <span class="apidocSignatureSpan">(file, ctx, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function promzard(file, ctx, cb) {
+  if (typeof ctx === 'function') cb = ctx, ctx = null;
+  if (!ctx) ctx = {};
+  var pz = new PromZard(file, ctx)
+  pz.on('error', cb)
+  pz.on('data', function (data) {
+    cb(null, data)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard" id="apidoc.element.promzard.PromZard">
+        function <span class="apidocSignatureSpan">promzard.</span>PromZard
+        <span class="apidocSignatureSpan">(file, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PromZard(file, ctx) {
+  if (!(this instanceof PromZard))
+    return new PromZard(file, ctx)
+  EventEmitter.call(this)
+  this.file = file
+  this.ctx = ctx
+  this.unique = crypto.randomBytes(8).toString('hex')
+  this.load()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+to the module (you can get this via Node's `require.resolve`.)  Also,
+the `prompt` function is injected into the context object, so watch out.
+
+Whatever you put in that `ctx` will of course also be available in the
+module.  You can get quite fancy with this, passing in existing configs
+and so on.
+
+### Class: promzard.<span class="apidocCodeKeywordSpan">PromZard</span>(file, ctx)
+
+Just like the `promzard` function, but the EventEmitter that makes it
+all happen.  Emits either a `data` event with the data, or a `error`
+event if it blows up.
+
+If `error` is emitted, then `data` never will be.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.fromBuffer" id="apidoc.element.promzard.fromBuffer">
+        function <span class="apidocSignatureSpan">promzard.</span>fromBuffer
+        <span class="apidocSignatureSpan">(buf, ctx, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromBuffer = function (buf, ctx, cb) {
+  var filename = 0
+  do {
+    filename = '\0' + Math.random();
+  } while (files[filename])
+  files[filename] = buf
+  var ret = promzard(filename, ctx, cb)
+  delete files[filename]
+  return ret
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.promzard.PromZard" id="apidoc.module.promzard.PromZard">module promzard.PromZard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard.PromZard" id="apidoc.element.promzard.PromZard.PromZard">
+        function <span class="apidocSignatureSpan">promzard.</span>PromZard
+        <span class="apidocSignatureSpan">(file, ctx)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PromZard(file, ctx) {
+  if (!(this instanceof PromZard))
+    return new PromZard(file, ctx)
+  EventEmitter.call(this)
+  this.file = file
+  this.ctx = ctx
+  this.unique = crypto.randomBytes(8).toString('hex')
+  this.load()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+to the module (you can get this via Node's `require.resolve`.)  Also,
+the `prompt` function is injected into the context object, so watch out.
+
+Whatever you put in that `ctx` will of course also be available in the
+module.  You can get quite fancy with this, passing in existing configs
+and so on.
+
+### Class: promzard.<span class="apidocCodeKeywordSpan">PromZard</span>(file, ctx)
+
+Just like the `promzard` function, but the EventEmitter that makes it
+all happen.  Emits either a `data` event with the data, or a `error`
+event if it blows up.
+
+If `error` is emitted, then `data` never will be.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.promzard.PromZard.prototype" id="apidoc.module.promzard.PromZard.prototype">module promzard.PromZard.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard.prototype.load" id="apidoc.element.promzard.PromZard.prototype.load">
+        function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>load
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function () {
+  if (files[this.file])
+    return this.loaded()
+
+  fs.readFile(this.file, 'utf8', function (er, d) {
+    if (er &amp;&amp; this.backupFile) {
+      this.file = this.backupFile
+      delete this.backupFile
+      return this.load()
+    }
+    if (er)
+      return this.emit('error', this.error = er)
+    files[this.file] = d
+    this.loaded()
+  }.bind(this))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function PromZard (file, ctx) {
+if (!(this instanceof PromZard))
+  return new PromZard(file, ctx)
+EventEmitter.call(this)
+this.file = file
+this.ctx = ctx
+this.unique = crypto.randomBytes(8).toString('hex')
+this.<span class="apidocCodeKeywordSpan">load</span>()
+}
+
+PromZard.prototype = Object.create(
+EventEmitter.prototype,
+{ constructor: {
+    value: PromZard,
+    readable: true,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard.prototype.loaded" id="apidoc.element.promzard.PromZard.prototype.loaded">
+        function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>loaded
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loaded = function () {
+  this.ctx.prompt = this.makePrompt()
+  this.ctx.__filename = this.file
+  this.ctx.__dirname = path.dirname(this.file)
+  this.ctx.__basename = path.basename(this.file)
+  var mod = this.ctx.module = this.makeModule()
+  this.ctx.require = function (path) {
+    return mod.require(path)
+  }
+  this.ctx.require.resolve = function(path) {
+    return Module._resolveFilename(path, mod);
+  }
+  this.ctx.exports = mod.exports
+
+  this.script = this.wrap(files[this.file])
+  var fn = vm.runInThisContext(this.script, this.file)
+  var args = Object.keys(this.ctx).map(function (k) {
+    return this.ctx[k]
+  }.bind(this))
+  try { var res = fn.apply(this.ctx, args) }
+  catch (er) { this.emit('error', er) }
+  if (res &amp;&amp;
+      typeof res === 'object' &amp;&amp;
+      exports === mod.exports &amp;&amp;
+      Object.keys(exports).length === 1) {
+    this.result = res
+  } else {
+    this.result = mod.exports
+  }
+  this.walk()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    readable: true,
+    configurable: true,
+    writable: true,
+    enumerable: false } } )
+
+PromZard.prototype.load = function () {
+if (files[this.file])
+  return this.<span class="apidocCodeKeywordSpan">loaded</span>()
+
+fs.readFile(this.file, 'utf8', function (er, d) {
+  if (er &amp;&amp; this.backupFile) {
+    this.file = this.backupFile
+    delete this.backupFile
+    return this.load()
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard.prototype.makeModule" id="apidoc.element.promzard.PromZard.prototype.makeModule">
+        function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>makeModule
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeModule = function () {
+  var mod = new Module(this.file, module)
+  mod.loaded = true
+  mod.filename = this.file
+  mod.id = this.file
+  mod.paths = Module._nodeModulePaths(path.dirname(this.file))
+  return mod
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+PromZard.prototype.loaded = function () {
+this.ctx.prompt = this.makePrompt()
+this.ctx.__filename = this.file
+this.ctx.__dirname = path.dirname(this.file)
+this.ctx.__basename = path.basename(this.file)
+var mod = this.ctx.module = this.<span class="apidocCodeKeywordSpan">makeModule</span>()
+this.ctx.require = function (path) {
+  return mod.require(path)
+}
+this.ctx.require.resolve = function(path) {
+  return Module._resolveFilename(path, mod);
+}
+this.ctx.exports = mod.exports
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard.prototype.makePrompt" id="apidoc.element.promzard.PromZard.prototype.makePrompt">
+        function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>makePrompt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makePrompt = function () {
+  this.prompts = []
+  return prompt.bind(this)
+  function prompt () {
+    var p, d, t
+    for (var i = 0; i &lt; arguments.length; i++) {
+      var a = arguments[i]
+      if (typeof a === 'string' &amp;&amp; p)
+        d = a
+      else if (typeof a === 'string')
+        p = a
+      else if (typeof a === 'function')
+        t = a
+      else if (a &amp;&amp; typeof a === 'object') {
+        p = a.prompt || p
+        d = a.default || d
+        t = a.transform || t
+      }
+    }
+
+    try { return this.unique + '-' + this.prompts.length }
+    finally { this.prompts.push([p, d, t]) }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return this.emit('error', this.error = er)
+  files[this.file] = d
+  this.loaded()
+}.bind(this))
+}
+
+PromZard.prototype.loaded = function () {
+this.ctx.prompt = this.<span class="apidocCodeKeywordSpan">makePrompt</span>()
+this.ctx.__filename = this.file
+this.ctx.__dirname = path.dirname(this.file)
+this.ctx.__basename = path.basename(this.file)
+var mod = this.ctx.module = this.makeModule()
+this.ctx.require = function (path) {
+  return mod.require(path)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard.prototype.prompt" id="apidoc.element.promzard.PromZard.prototype.prompt">
+        function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>prompt
+        <span class="apidocSignatureSpan">(pdt, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prompt = function (pdt, cb) {
+  var prompt = pdt[0]
+  var def = pdt[1]
+  var tx = pdt[2]
+
+  if (tx) {
+    cb = function (cb) { return function (er, data) {
+      try {
+        var res = tx(data)
+        if (!er &amp;&amp; res instanceof Error &amp;&amp; !!res.notValid) {
+          return cb(res, null)
+        }
+        return cb(er, res)
+      }
+      catch (er) { this.emit('error', er) }
+    }}(cb).bind(this)
+  }
+
+  read({ prompt: prompt + ':' , default: def }, cb)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (undefined === prompt[0])
+  prompt[0] = k
+
+// default to the ctx value, if there is one
+if (undefined === prompt[1])
+  prompt[1] = this.ctx[k]
+
+return this.<span class="apidocCodeKeywordSpan">prompt</span>(prompt, function (er, res) {
+  if (er) {
+    if (!er.notValid) {
+      return this.emit('error', this.error = er);
+    }
+    console.log(er.message)
+    i --
+    return L.call(this)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard.prototype.walk" id="apidoc.element.promzard.PromZard.prototype.walk">
+        function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>walk
+        <span class="apidocSignatureSpan">(o, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">walk = function (o, cb) {
+  o = o || this.result
+  cb = cb || function (er, res) {
+    if (er)
+      return this.emit('error', this.error = er)
+    this.result = res
+    return this.emit('data', res)
+  }
+  cb = cb.bind(this)
+  var keys = Object.keys(o)
+  var i = 0
+  var len = keys.length
+
+  L.call(this)
+  function L () {
+    if (this.error)
+      return
+    while (i &lt; len) {
+      var k = keys[i]
+      var v = o[k]
+      i++
+
+      if (v &amp;&amp; typeof v === 'object') {
+        return this.walk(v, function (er, res) {
+          if (er) return cb(er)
+          o[k] = res
+          L.call(this)
+        }.bind(this))
+      } else if (v &amp;&amp;
+                 typeof v === 'string' &amp;&amp;
+                 v.indexOf(this.unique) === 0) {
+        var n = +v.substr(this.unique.length + 1)
+        var prompt = this.prompts[n]
+        if (isNaN(n) || !prompt)
+          continue
+
+        // default to the key
+        if (undefined === prompt[0])
+          prompt[0] = k
+
+        // default to the ctx value, if there is one
+        if (undefined === prompt[1])
+          prompt[1] = this.ctx[k]
+
+        return this.prompt(prompt, function (er, res) {
+          if (er) {
+            if (!er.notValid) {
+              return this.emit('error', this.error = er);
+            }
+            console.log(er.message)
+            i --
+            return L.call(this)
+          }
+          o[k] = res
+          L.call(this)
+        }.bind(this))
+      } else if (typeof v === 'function') {
+        try { return v.call(this.ctx, function (er, res) {
+          if (er)
+            return this.emit('error', this.error = er)
+          o[k] = res
+          // back up so that we process this one again.
+          // this is because it might return a prompt() call in the cb.
+          i --
+          L.call(this)
+        }.bind(this)) }
+        catch (er) { this.emit('error', er) }
+      }
+    }
+    // made it to the end of the loop, maybe
+    if (i &gt;= len)
+      return cb(null, o)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    typeof res === 'object' &amp;&amp;
+    exports === mod.exports &amp;&amp;
+    Object.keys(exports).length === 1) {
+  this.result = res
+} else {
+  this.result = mod.exports
+}
+this.<span class="apidocCodeKeywordSpan">walk</span>()
+}
+
+PromZard.prototype.makeModule = function () {
+var mod = new Module(this.file, module)
+mod.loaded = true
+mod.filename = this.file
+mod.id = this.file
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.promzard.PromZard.prototype.wrap" id="apidoc.element.promzard.PromZard.prototype.wrap">
+        function <span class="apidocSignatureSpan">promzard.PromZard.prototype.</span>wrap
+        <span class="apidocSignatureSpan">(body)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrap = function (body) {
+  var s = '(function( %s ) { %s\n })'
+  var args = Object.keys(this.ctx).join(', ')
+  return util.format(s, args, body)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return mod.require(path)
+}
+this.ctx.require.resolve = function(path) {
+  return Module._resolveFilename(path, mod);
+}
+this.ctx.exports = mod.exports
+
+this.script = this.<span class="apidocCodeKeywordSpan">wrap</span>(files[this.file])
+var fn = vm.runInThisContext(this.script, this.file)
+var args = Object.keys(this.ctx).map(function (k) {
+  return this.ctx[k]
+}.bind(this))
+try { var res = fn.apply(this.ctx, args) }
+catch (er) { this.emit('error', er) }
+if (res &amp;&amp;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
